@@ -1,0 +1,9 @@
+Description = frp server
+After = network.target syslog.target
+Wants = network.target
+[Service]
+Type = simple
+# 启动frps的命令，需修改为您的frps的安装路径
+ExecStart = frp/frpc -c frp/frpc.toml
+[Install]
+WantedBy = multi-user.target
